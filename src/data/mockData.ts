@@ -251,6 +251,151 @@ export const parks: ParkData[] = [
       { id: 'area-012-3', name: '梅里景区', ndviTrend: generateNdviTrend(), cost: generateCost(), soilData: generateSoilData() },
     ],
   },
+  {
+    id: 'park-013',
+    name: '中山公园',
+    city: '青岛',
+    province: '山东',
+    type: '综合公园',
+    metrics: { healthIndex: 80.3, irrigationEfficiency: 83.6, visitorCarryRate: 73.5, maintenanceResponseRate: 88.9 },
+    soilMoisture: 35.2,
+    visitorDensity: 168,
+    areas: [
+      { id: 'area-013-1', name: '樱花苑', ndviTrend: generateNdviTrend(), cost: generateCost(), soilData: generateSoilData() },
+      { id: 'area-013-2', name: '动物园片区', ndviTrend: generateNdviTrend(), cost: generateCost(), soilData: generateSoilData() },
+      { id: 'area-013-3', name: '小西湖', ndviTrend: generateNdviTrend(), cost: generateCost(), soilData: generateSoilData() },
+    ],
+  },
+  {
+    id: 'park-014',
+    name: '八大关公园',
+    city: '青岛',
+    province: '山东',
+    type: '专类公园',
+    metrics: { healthIndex: 83.7, irrigationEfficiency: 87.2, visitorCarryRate: 68.9, maintenanceResponseRate: 91.5 },
+    soilMoisture: 28.5,
+    visitorDensity: 145,
+    areas: [
+      { id: 'area-014-1', name: '紫荆关路', ndviTrend: generateNdviTrend(), cost: generateCost(), soilData: generateSoilData() },
+      { id: 'area-014-2', name: '居庸关路', ndviTrend: generateNdviTrend(), cost: generateCost(), soilData: generateSoilData() },
+    ],
+  },
+  {
+    id: 'park-015',
+    name: '拙政园',
+    city: '苏州',
+    province: '江苏',
+    type: '专类公园',
+    metrics: { healthIndex: 87.5, irrigationEfficiency: 90.8, visitorCarryRate: 82.1, maintenanceResponseRate: 94.3 },
+    soilMoisture: 52.3,
+    visitorDensity: 278,
+    areas: [
+      { id: 'area-015-1', name: '东花园', ndviTrend: generateNdviTrend(), cost: generateCost(), soilData: generateSoilData() },
+      { id: 'area-015-2', name: '中花园', ndviTrend: generateNdviTrend(), cost: generateCost(), soilData: generateSoilData() },
+      { id: 'area-015-3', name: '西花园', ndviTrend: generateNdviTrend(), cost: generateCost(), soilData: generateSoilData() },
+    ],
+  },
+  {
+    id: 'park-016',
+    name: '虎丘公园',
+    city: '苏州',
+    province: '江苏',
+    type: '综合公园',
+    metrics: { healthIndex: 84.2, irrigationEfficiency: 86.7, visitorCarryRate: 75.8, maintenanceResponseRate: 90.6 },
+    soilMoisture: 41.8,
+    visitorDensity: 198,
+    areas: [
+      { id: 'area-016-1', name: '虎丘塔景区', ndviTrend: generateNdviTrend(), cost: generateCost(), soilData: generateSoilData() },
+      { id: 'area-016-2', name: '山塘河畔', ndviTrend: generateNdviTrend(), cost: generateCost(), soilData: generateSoilData() },
+    ],
+  },
+  {
+    id: 'park-017',
+    name: '鼓浪屿公园',
+    city: '厦门',
+    province: '福建',
+    type: '专类公园',
+    metrics: { healthIndex: 81.6, irrigationEfficiency: 85.3, visitorCarryRate: 79.4, maintenanceResponseRate: 87.8 },
+    soilMoisture: 38.9,
+    visitorDensity: 245,
+    areas: [
+      { id: 'area-017-1', name: '日光岩景区', ndviTrend: generateNdviTrend(), cost: generateCost(), soilData: generateSoilData() },
+      { id: 'area-017-2', name: '菽庄花园', ndviTrend: generateNdviTrend(), cost: generateCost(), soilData: generateSoilData() },
+    ],
+  },
+  {
+    id: 'park-018',
+    name: '环岛路带状公园',
+    city: '厦门',
+    province: '福建',
+    type: '带状公园',
+    metrics: { healthIndex: 82.8, irrigationEfficiency: 84.5, visitorCarryRate: 67.2, maintenanceResponseRate: 89.1 },
+    soilMoisture: 26.7,
+    visitorDensity: 134,
+    areas: [
+      { id: 'area-018-1', name: '曾厝垵段', ndviTrend: generateNdviTrend(), cost: generateCost(), soilData: generateSoilData() },
+      { id: 'area-018-2', name: '黄厝段', ndviTrend: generateNdviTrend(), cost: generateCost(), soilData: generateSoilData() },
+      { id: 'area-018-3', name: '会展段', ndviTrend: generateNdviTrend(), cost: generateCost(), soilData: generateSoilData() },
+    ],
+  },
+  {
+    id: 'park-019',
+    name: '大明湖公园',
+    city: '济南',
+    province: '山东',
+    type: '综合公园',
+    metrics: { healthIndex: 79.4, irrigationEfficiency: 82.8, visitorCarryRate: 71.6, maintenanceResponseRate: 86.3 },
+    soilMoisture: 55.2,
+    visitorDensity: 221,
+    areas: [
+      { id: 'area-019-1', name: '历下亭区', ndviTrend: generateNdviTrend(), cost: generateCost(), soilData: generateSoilData() },
+      { id: 'area-019-2', name: '铁公祠区', ndviTrend: generateNdviTrend(), cost: generateCost(), soilData: generateSoilData() },
+    ],
+  },
+  {
+    id: 'park-020',
+    name: '越秀公园',
+    city: '广州',
+    province: '广东',
+    type: '综合公园',
+    metrics: { healthIndex: 81.5, irrigationEfficiency: 85.6, visitorCarryRate: 77.3, maintenanceResponseRate: 90.2 },
+    soilMoisture: 48.7,
+    visitorDensity: 289,
+    areas: [
+      { id: 'area-020-1', name: '五羊石像区', ndviTrend: generateNdviTrend(), cost: generateCost(), soilData: generateSoilData() },
+      { id: 'area-020-2', name: '镇海楼片区', ndviTrend: generateNdviTrend(), cost: generateCost(), soilData: generateSoilData() },
+      { id: 'area-020-3', name: '金印游乐场', ndviTrend: generateNdviTrend(), cost: generateCost(), soilData: generateSoilData() },
+    ],
+  },
+  {
+    id: 'park-021',
+    name: '世界之窗公园',
+    city: '深圳',
+    province: '广东',
+    type: '专类公园',
+    metrics: { healthIndex: 76.8, irrigationEfficiency: 81.2, visitorCarryRate: 88.7, maintenanceResponseRate: 85.9 },
+    soilMoisture: 44.5,
+    visitorDensity: 305,
+    areas: [
+      { id: 'area-021-1', name: '世界广场区', ndviTrend: generateNdviTrend(), cost: generateCost(), soilData: generateSoilData() },
+      { id: 'area-021-2', name: '亚洲区', ndviTrend: generateNdviTrend(), cost: generateCost(), soilData: generateSoilData() },
+      { id: 'area-021-3', name: '欧洲区', ndviTrend: generateNdviTrend(), cost: generateCost(), soilData: generateSoilData() },
+    ],
+  },
+  {
+    id: 'park-022',
+    name: '夫子庙公园',
+    city: '南京',
+    province: '江苏',
+    type: '社区公园',
+    metrics: { healthIndex: 78.9, irrigationEfficiency: 82.4, visitorCarryRate: 83.5, maintenanceResponseRate: 88.1 },
+    soilMoisture: 39.6,
+    visitorDensity: 262,
+    areas: [
+      { id: 'area-022-1', name: '秦淮风光带', ndviTrend: generateNdviTrend(), cost: generateCost(), soilData: generateSoilData() },
+      { id: 'area-022-2', name: '贡院街片区', ndviTrend: generateNdviTrend(), cost: generateCost(), soilData: generateSoilData() },
+    ],
+  },
 ]
 
 export const alerts: Alert[] = [
@@ -489,6 +634,46 @@ export const weeklyReports: WeeklyReport[] = [
   },
 ]
 
-export const currentUser: User = {
+export const parkList = parks
+
+export const alertThresholds = {
+  soilMoistureThreshold: 30,
+  visitorDensityThreshold: 250,
+}
+
+let alertIdCounter = 100
+
+export function generateAlertFromPark(park: ParkData, reason: string, type: '一级预警' | '二级预警'): Alert {
+  alertIdCounter += 1
+  return {
+    id: `alert-${String(alertIdCounter).padStart(3, '0')}`,
+    parkId: park.id,
+    parkName: park.name,
+    type,
+    reason,
+    createdAt: new Date().toISOString(),
+    status: '待处理',
+    approvalChain: [],
+  }
+}
+
+export const defaultUser: User = {
   role: '国家级',
 }
+
+export const demoUsers: User[] = [
+  {
+    role: '国家级',
+  },
+  {
+    role: '省级',
+    province: '广东',
+  },
+  {
+    role: '市级',
+    province: '广东',
+    city: '广州',
+  },
+]
+
+export const currentUser = defaultUser

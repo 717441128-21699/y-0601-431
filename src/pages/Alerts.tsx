@@ -56,8 +56,19 @@ function ApprovalModal({
         className="w-full max-w-lg rounded-xl border border-emerald-800/20 bg-[#0D1B16] p-6 shadow-2xl"
         onClick={e => e.stopPropagation()}
       >
-        <div className="mb-6 flex items-center justify-between">
-          <h2 className="text-lg font-semibold text-emerald-100">审批流程</h2>
+        <div className="mb-6 flex items-start justify-between">
+          <div>
+            <h2 className="text-lg font-semibold text-emerald-100">审批流程</h2>
+            <div className="mt-1 flex items-center gap-2">
+              <span className={cn(
+                'rounded px-2 py-0.5 text-[11px] font-medium',
+                alert.type === '一级预警' ? 'bg-orange-500/20 text-orange-400' : 'bg-red-500/20 text-red-400'
+              )}>
+                {alert.type}
+              </span>
+              <span className="text-sm text-emerald-400/70">{alert.parkName}</span>
+            </div>
+          </div>
           <button onClick={onClose} className="rounded-lg p-1 text-emerald-500/60 transition-colors hover:text-emerald-300">
             <X className="h-5 w-5" />
           </button>
@@ -198,14 +209,17 @@ export default function Alerts() {
   const alertTab = useAppStore(s => s.alertTab)
   const setAlertTab = useAppStore(s => s.setAlertTab)
   const filteredAlerts = useAppStore(s => s.filteredAlerts)
-  const alerts = useAppStore(s => s.alerts)
+  const visibleAlerts = useAppStore(s => s.visibleAlerts)
   const upgradeAlert = useAppStore(s => s.upgradeAlert)
+  const pushAlert = useAppStore(s => s.pushAlert)
+  const generateAutoAlerts = useAppStore(s => s.generateAutoAlerts)
+  const checkAndUpgradeAlerts = useAppStore(s => s.checkAndUpgradeAlerts)
 
   const [modalAlert, setModalAlert] = useState<Alert | null>(null)
   const [expandedId, setExpandedId] = useState<string | null>(null)
 
-  const level1Count = alerts.filter(a => a.type === '一级预警').length
-  const level2Count = alerts.filter(a => a.type === '二级预警').length
+  const level1Count = visibleAlerts.filter(a => a.type === '一级预警').length
+  const level2Count = visibleAlerts.filter(a => a.type === '二级预警').length
 
   const tabs: { key: '一级预警' | '二级预警'; count: number }[] = [
     { key: '一级预警', count: level1Count },
@@ -214,9 +228,25 @@ export default function Alerts() {
 
   return (
     <div className="min-h-screen bg-[#0A1A14] p-6">
-      <div className="mb-6">
-        <h1 className="text-2xl font-bold text-white">预警管理</h1>
-        <p className="text-emerald-400/60 text-sm">绿地异常预警与审批处理</p>
+      <div className="mb-6 flex items-start justify-between">
+        <div>
+          <h1 className="text-2xl font-bold text-white">预警管理</h1>
+          <p className="text-emerald-400/60 text-sm">绿地异常预警与审批处理</p>
+        </div>
+        <div className="flex gap-2">
+          <button
+            onClick={generateAutoAlerts}
+            className="rounded-lg border border-emerald-700/30 bg-emerald-900/20 px-3 py-1.5 text-xs font-medium text-emerald-400 transition-colors hover:bg-emerald-800/30 hover:text-emerald-300"
+          >
+            模拟自动检测
+          </button>
+          <button
+            onClick={checkAndUpgradeAlerts}
+            className="rounded-lg border border-amber-700/30 bg-amber-900/20 px-3 py-1.5 text-xs font-medium text-amber-400 transition-colors hover:bg-amber-800/30 hover:text-amber-300"
+          >
+            模拟自动升级
+          </button>
+        </div>
       </div>
 
       <div className="flex gap-6 border-b border-emerald-800/20 mb-5">
@@ -307,6 +337,17 @@ export default function Alerts() {
                   </td>
                   <td className="px-5 py-3.5">
                     <div className="flex items-center gap-2">
+                      {alert.type === '一级预警' && alert.status === '待处理' && (
+                        <button
+                          onClick={e => {
+                            e.stopPropagation()
+                            pushAlert(alert.id)
+                          }}
+                          className="rounded-lg bg-amber-600/20 px-3 py-1 text-xs font-medium text-amber-400 transition-colors hover:bg-amber-600/30"
+                        >
+                          推送通知
+                        </button>
+                      )}
                       {alert.type === '一级预警' && alert.status === '已推送' && (
                         <button
                           onClick={e => {
